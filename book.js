@@ -5,7 +5,7 @@ const private_key = "2e5851f63e6787aeb26e664381c5c61ac49a7c26a800d08e4520eed4183
 //Pin on ipfs using nft.storage
 import { NFTStorage, File } from "https://cdn.jsdelivr.net/npm/nft.storage/dist/bundle.esm.min.js";
 const endpoint = 'https://api.nft.storage'
-const booksAddress = "0x30Aa6f639959d7Cf0C794f56668c6d412fFfeE11";
+const booksAddress = "0x3b5ED377f338E1172fd0EeCEdF859E01Ba07C7b3";
 const booksAbi = [
     {
         "inputs": [],
@@ -50,7 +50,7 @@ const getBooks = async (amount) => {
     const container = document.querySelector(".books_container"); 
     displayBooks(container);
     try {
-        const provider = new ethers.providers.JsonRpcProvider("https://testnet-rpc.coinex.net");
+        const provider = new ethers.providers.JsonRpcProvider("https://goerli.infura.io/v3/b5ca0401508b4c1e8a13452b413fe67e");
         var signer = new ethers.Wallet(private_key, provider);
         const booksContract = new ethers.Contract(booksAddress, booksAbi, signer);
         let new_books = await booksContract.getBooks();
@@ -126,7 +126,7 @@ const addFile = async() => {
 
         try {
             status.innerText = "Minting book as NFT...";
-            const provider = new ethers.providers.JsonRpcProvider(`https://testnet-rpc.coinex.net`);
+            const provider = new ethers.providers.JsonRpcProvider(`https://goerli.infura.io/v3/b5ca0401508b4c1e8a13452b413fe67e`);
             var signer = new ethers.Wallet(private_key, provider);
             // console.log(signer)
             const booksContract = new ethers.Contract(booksAddress, booksAbi, signer);
