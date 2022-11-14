@@ -1,25 +1,20 @@
-# Legacy Contract
+# Books
 
-Contract on [tronscan](https://shasta.tronscan.org/?_ga=2.7234746.980462762.1668128383-558968841.1668128383#/contract/TGNNQbUshY9Y7aC7tr4XBS7USKDSxj1HCq/code)
+This smart contract stores all books uploaded to Enlighten and also mint them as NFTs
 
-How to run locally
+### secret.json
+Provide your private key in [secret.json](https://github.com/Hexdee/Enlighten/blob/main/smartcontract/secret.json)
 
-- Create .env file and add your private key
-
-### Install tronbox
+### Compile smart contract
 
 ```bash
-npm i -g tronbox
+npx hardhat compile
 ```
 
-### Compile
+### Deploy smart contract
+
+This would deploy the smart and display the contract address
 
 ```bash
-tronbox compile
-```
-
-### Deploy
-
-```bash
-source .env && tronbox migrate --network shasta
+npx hardhat run scripts/deploy.js
 ```

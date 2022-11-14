@@ -1,6 +1,12 @@
-
-src/js/metacoin-config.js
 node_modules
-build
 .env
+coverage
+coverage.json
+typechain
+typechain-types
+secret.json
+
+#Hardhat files
+cache
+artifacts
 
